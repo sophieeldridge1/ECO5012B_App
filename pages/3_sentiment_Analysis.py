@@ -30,5 +30,9 @@ df = pd.DataFrame(news_items)
 
 st.write(df)
 
-avg_sent = df["sentiment"].mean()
+if "sentiment" in df.columns and not df.empty:
+    avg_sent = df["sentiment"].mean()
+else:
+    st.warning("No sentiment data available — check your news source or ticker input.")
+    avg_sent = None
 st.success(f"Average Sentiment: {avg_sent:.2f}")
