@@ -6,3 +6,5 @@ matplotlib
 textblob
 requests 
 beautifulsoup4
+statsmodels
+
